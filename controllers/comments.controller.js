@@ -45,11 +45,11 @@ exports.createComment = asyncWrapper(async (req, res) => {
 // Update a comment
 exports.updateComment = asyncWrapper(async (req, res) => {
     
-        const { postId } = req.params;
+        const { commentId } = req.params;
         const { text } = req.body;
 
-        const updatedComment = await Post.findByIdAndUpdate(
-            postId,
+        const updatedComment = await Comment.findByIdAndUpdate(
+            commentId,
             { text },
             { new: true }
         );
@@ -66,7 +66,7 @@ exports.updateComment = asyncWrapper(async (req, res) => {
 exports.deleteComment = asyncWrapper(async (req, res) => {
     
             
-            const { postId } = req.params;
+            const { commentId } = req.params;
 
         const deletedComment = await Comment.findByIdAndDelete(commentId);
 

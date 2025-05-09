@@ -12,7 +12,8 @@ const appError = require('../utils/appError');
 
 router.route('/:postId')
             .get(verifyToken,CommentController.getCommentsByPostId)
-            .post(verifyToken, CommentController.createComment)
+            .post(verifyToken, CommentController.createComment);
+router.route('/:commentId')
             .patch(verifyToken,  CommentController.updateComment)
             .delete(verifyToken,  CommentController.deleteComment);
 
