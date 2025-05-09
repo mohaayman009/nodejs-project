@@ -45,7 +45,7 @@ router.route('/')
             .get(verifyToken, usersController.getAllUsers)
 
 router.route('/register')
-            .post(upload.single('avatar'), usersController.register)
+            .post(/*upload.single('avatar'),*/ usersController.register)
 
 router.route('/login')
             .post(usersController.login)

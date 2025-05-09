@@ -22,18 +22,19 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     token: {
-        type: String
+        type: String,
+        default: "NOT EXIST"
     },
     role: {
         type: String, // ["USER", "ADMIN", "MANGER"]
         enum: [userRoles.USER, userRoles.ADMIN, userRoles.MANGER],
         default: userRoles.USER
     },
-    avatar: {
+   /* avatar: {
         type: String,
         default: 'uploads/profile.png'
     }
-
+*/
 })
 
 module.exports = mongoose.model('User', userSchema);

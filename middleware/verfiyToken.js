@@ -8,6 +8,8 @@ const verifyToken = (req, res, next) => {
         const error = appError.create('token is required', 401, httpStatusText.ERROR)
         return next(error);
     }
+   
+    
 
     const token = authHeader.split(' ')[1];
     try {
@@ -20,7 +22,6 @@ const verifyToken = (req, res, next) => {
         const error = appError.create('invalid token', 401, httpStatusText.ERROR)
         return next(error);
     }   
-    
 }
 
 module.exports = verifyToken;
