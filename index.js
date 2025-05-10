@@ -24,8 +24,15 @@ mongoose.connect(url).then(() => {
 
 app.use(cors())
 app.use(express.json());
+<<<<<<< Updated upstream:index.js
 
 const coursesRouter = require('./routes/courses.route');
+=======
+app.use(cookieParser());
+app.use(express.urlencoded({ extended: true }));
+
+const postsRouter = require('./routes/posts.route');
+>>>>>>> Stashed changes:server.js
 const usersRouter = require('./routes/users.route');
 
 
